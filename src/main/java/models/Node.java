@@ -1,14 +1,14 @@
 package models;
 
-import enums.PathType;
+import enums.PathTypeEnum;
 
 public class Node {
 
     final String name;
     final Node parent;
-    final PathType type;
+    final PathTypeEnum type;
 
-    public Node(String name, Node parent, PathType type) {
+    public Node(String name, Node parent, PathTypeEnum type) {
         this.name = name;
         this.parent = parent;
         this.type = type;
@@ -22,7 +22,7 @@ public class Node {
         return parent;
     }
 
-    public PathType getType() {
+    public PathTypeEnum getType() {
         return type;
     }
 }

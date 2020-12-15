@@ -1,6 +1,6 @@
 package system;
 
-import enums.PathType;
+import enums.PathTypeEnum;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +19,7 @@ public class FileSystemImpTest {
         fileSystem.addFile("migo.txt");
         Assert.assertEquals(1, fileSystem.getNodeList().size());
         Assert.assertEquals("migo.txt", fileSystem.getNodeList().get(0).getName());
-        Assert.assertEquals(PathType.FILE, fileSystem.getNodeList().get(0).getType());
+        Assert.assertEquals(PathTypeEnum.FILE, fileSystem.getNodeList().get(0).getType());
     }
 
     @Test
@@ -27,7 +27,7 @@ public class FileSystemImpTest {
         fileSystem.addDir("migo");
         Assert.assertEquals(1, fileSystem.getNodeList().size());
         Assert.assertEquals("migo", fileSystem.getNodeList().get(0).getName());
-        Assert.assertEquals(PathType.DIRECTORY, fileSystem.getNodeList().get(0).getType());
+        Assert.assertEquals(PathTypeEnum.DIRECTORY, fileSystem.getNodeList().get(0).getType());
     }
 
     @Test
