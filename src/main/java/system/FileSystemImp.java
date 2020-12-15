@@ -15,6 +15,10 @@ import java.util.Optional;
  */
 public class FileSystemImp implements FileSystem {
 
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+
     private final HashMap<Node, List<Node>> tree = new HashMap<>();
     private Node currentNode;
 
@@ -91,7 +95,13 @@ public class FileSystemImp implements FileSystem {
     }
 
     public void listAll() {
-        tree.get(currentNode).forEach(n -> System.out.print(n.getName() + " "));
+        tree.get(currentNode).forEach(n -> {
+            if(n.getType().equals(PathTypeEnum.FILE)) {
+                System.out.print(ANSI_YELLOW + n.getName() + " " + ANSI_RESET);
+            } else {
+                System.out.print(ANSI_BLUE + n.getName() + " " + ANSI_RESET);
+            }
+        });
     }
 
     public String getCurrentPath() {
