@@ -11,3 +11,5 @@ Run the main class to start the simulator
 • DirUp : changes the current directory to its parent 
 
 • Pwd : prints the complete path of the current directory
+
+• Ls : prints all the content of the current directory
