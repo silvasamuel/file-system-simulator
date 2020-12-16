@@ -66,7 +66,9 @@ public class Main {
                     System.out.println();
                     break;
                 default:
-                    System.out.println("Command not found: " + option);
+                    if(!option.equals("exit")) {
+                        System.out.println("Command not found: " + option);
+                    }
             }
 
         } while(!option.equals("exit"));
